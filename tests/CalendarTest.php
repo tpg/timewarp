@@ -20,7 +20,7 @@ class CalendarTest extends TestCase
     {
         $event = new Timewarp\Components\Event();
         $event->addProperty(new Timewarp\Properties\DtStart(Carbon::create(2017, 10, 22)));
-
-        dd($event->toString());
+        $calendar = $event->getCalendar();
+        $calendar->save('test');
     }
 }

@@ -11,32 +11,38 @@
 namespace THEPUBLICGOOD\Timewarp\Components;
 
 
+use THEPUBLICGOOD\Timewarp\Calendar;
 use THEPUBLICGOOD\Timewarp\Properties\Property;
+use THEPUBLICGOOD\Timewarp\Support\CalendarObject;
+use THEPUBLICGOOD\Timewarp\Support\Traits\IsDelimited;
 
 /**
  * Class Component
  * @package THEPUBLICGOOD\Timewarp\Components
  */
-abstract class Component
+abstract class Component extends CalendarObject
 {
-    /**
-     * @var string
-     */
-    protected $name;
+    use IsDelimited;
 
     /**
      * @var Property[]
      */
     protected $properties;
 
-    protected function startDelimiter(): string
+    /**
+     * Get the unwrapped content
+     *
+     * @return string
+     */
+    protected function unwrapped(): string
     {
-        return 'BEGIN:' . $this->name . "\r\n";
-    }
-
-    protected function endDelimiter(): string
-    {
-        return 'END:' . $this->name . "\r\n";
+        {
+            $properties = '';
+            foreach ($this->properties as $property) {
+                $properties .= $property->contentLine() . "\r\n";
+            }
+            return $properties;
+        }
     }
 
     /**
@@ -59,11 +65,6 @@ abstract class Component
         return $this->properties;
     }
 
-    public function wrap(string $content): string
-    {
-        return $this->startDelimiter() . $content . $this->endDelimiter();
-    }
-
     /**
      * Return the component as a string
      *
@@ -71,10 +72,13 @@ abstract class Component
      */
     public function toString(): string
     {
-        $properties = '';
-        foreach ($this->properties as $property) {
-            $properties .= $property->contentLine() . "\r\n";
-        }
-        return $this->wrap($properties);
+        return $this->wrap();
+    }
+
+    public function getCalendar(): Calendar
+    {
+        $calendar = new Calendar();
+        $calendar->addComponent($this);
+        return $calendar;
     }
 }
