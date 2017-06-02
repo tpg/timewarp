@@ -39,7 +39,7 @@ abstract class Component extends CalendarObject
         {
             $properties = '';
             foreach ($this->properties as $property) {
-                $properties .= $property->contentLine() . "\r\n";
+                $properties .= $property->contentLine();
             }
             return $properties;
         }

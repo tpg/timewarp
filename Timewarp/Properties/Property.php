@@ -75,7 +75,7 @@ abstract class Property
         if ($parameters = $this->parameterString()) {
             $line .= ';' . $parameters;
         }
-        return $line . ':' . $this->toString();
+        return $line . ':' . $this->toString() . "\r\n";
     }
 
     /**

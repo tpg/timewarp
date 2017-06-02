@@ -12,6 +12,8 @@ namespace THEPUBLICGOOD\Timewarp;
 
 
 use THEPUBLICGOOD\Timewarp\Components\Component;
+use THEPUBLICGOOD\Timewarp\Properties\Property;
+use THEPUBLICGOOD\Timewarp\Properties\Version;
 use THEPUBLICGOOD\Timewarp\Support\CalendarObject;
 use THEPUBLICGOOD\Timewarp\Support\Traits\IsDelimited;
 
@@ -29,9 +31,22 @@ class Calendar extends CalendarObject
     protected $name = 'VCALENDAR';
 
     /**
+     * @var Property[]
+     */
+    protected $properties = [];
+
+    /**
      * @var Component[]
      */
     protected $components = [];
+
+    /**
+     * Calendar constructor.
+     */
+    public function __construct()
+    {
+        $this->addProperty(new Version('2.0'));
+    }
 
     /**
      * Get the unwrapped content
@@ -40,23 +55,49 @@ class Calendar extends CalendarObject
      */
     protected function unwrapped(): string
     {
-        {
-            $components = '';
-            foreach ($this->components as $component) {
-                $components .= $component->toString();
-            }
-            return $components;
+        $properties = '';
+        foreach ($this->properties as $property) {
+            $properties .= $property->contentLine();
         }
+        $components = '';
+        foreach ($this->components as $component) {
+            $components .= $component->toString();
+        }
+        return $properties . $components;
+    }
+
+    /**
+     * Add a new property
+     *
+     * @param Property $property
+     * @return Calendar
+     */
+    public function addProperty(Property $property): Calendar
+    {
+        $this->properties[] = $property;
+        return $this;
+    }
+
+    /**
+     * Return properties array
+     *
+     * @return Property[]
+     */
+    public function properties()
+    {
+        return $this->properties;
     }
 
     /**
      * Add a component to the calendar object
      *
      * @param Component $component
+     * @return Calendar
      */
-    public function addComponent(Component $component)
+    public function addComponent(Component $component): Calendar
     {
         $this->components[] = $component;
+        return $this;
     }
 
     /**
