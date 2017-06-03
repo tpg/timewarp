@@ -8,12 +8,12 @@
  *
  */
 
-namespace THEPUBLICGOOD\Timewarp\Properties;
+namespace TPG\Timewarp\Properties;
 
 
-use THEPUBLICGOOD\Timewarp\Components\Event;
-use THEPUBLICGOOD\Timewarp\Components\Todo;
-use THEPUBLICGOOD\Timewarp\Properties\Types\TextProperty;
+use TPG\Timewarp\Components\Event;
+use TPG\Timewarp\Components\Todo;
+use TPG\Timewarp\Properties\Types\TextProperty;
 
 class Location extends TextProperty
 {

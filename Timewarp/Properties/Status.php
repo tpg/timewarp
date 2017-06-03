@@ -8,14 +8,14 @@
  *
  */
 
-namespace THEPUBLICGOOD\Timewarp\Properties;
+namespace TPG\Timewarp\Properties;
 
 
-use THEPUBLICGOOD\Timewarp\Components\Event;
-use THEPUBLICGOOD\Timewarp\Components\Journal;
-use THEPUBLICGOOD\Timewarp\Components\Todo;
-use THEPUBLICGOOD\Timewarp\Exceptions\OutOfBoundsException;
-use THEPUBLICGOOD\Timewarp\Properties\Types\EnumProperty;
+use TPG\Timewarp\Components\Event;
+use TPG\Timewarp\Components\Journal;
+use TPG\Timewarp\Components\Todo;
+use TPG\Timewarp\Exceptions\OutOfBoundsException;
+use TPG\Timewarp\Properties\Types\EnumProperty;
 
 class Status extends EnumProperty
 {

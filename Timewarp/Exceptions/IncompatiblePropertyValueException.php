@@ -8,7 +8,7 @@
  *
  */
 
-namespace THEPUBLICGOOD\Timewarp\Exceptions;
+namespace TPG\Timewarp\Exceptions;
 
 
 use Throwable;

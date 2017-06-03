@@ -8,7 +8,7 @@
  *
  */
 
-namespace THEPUBLICGOOD\Timewarp\Components;
+namespace TPG\Timewarp\Components;
 
 
 class Event extends Component

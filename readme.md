@@ -26,7 +26,7 @@ Timewarp calendars can be created in one of two ways. Either create the calendar
 Create a new calendar object by instantiating the `Calendar` class:
 
 ```php
-use THEPUBLICGOOD\Timewarp;
+use TPG\Timewarp;
 
 class CalendarController
 {
@@ -68,7 +68,7 @@ No other properties can be added directly to a calendar object and attempting to
 You can create a new event component by instantiating the `Components\Event` class:
 
 ```php
-use THEPUBLICGOOD\Timewarp;
+use TPG\Timewarp;
 
 class CalendarController
 {

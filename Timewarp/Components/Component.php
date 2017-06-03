@@ -8,18 +8,18 @@
  *
  */
 
-namespace THEPUBLICGOOD\Timewarp\Components;
+namespace TPG\Timewarp\Components;
 
 
-use THEPUBLICGOOD\Timewarp\Calendar;
-use THEPUBLICGOOD\Timewarp\Exceptions\FailedConformanceTestException;
-use THEPUBLICGOOD\Timewarp\Properties\Property;
-use THEPUBLICGOOD\Timewarp\Support\CalendarObject;
-use THEPUBLICGOOD\Timewarp\Support\Traits\IsDelimited;
+use TPG\Timewarp\Calendar;
+use TPG\Timewarp\Exceptions\FailedConformanceTestException;
+use TPG\Timewarp\Properties\Property;
+use TPG\Timewarp\Support\CalendarObject;
+use TPG\Timewarp\Support\Traits\IsDelimited;
 
 /**
  * Class Component
- * @package THEPUBLICGOOD\Timewarp\Components
+ * @package TPG\Timewarp\Components
  */
 abstract class Component extends CalendarObject
 {

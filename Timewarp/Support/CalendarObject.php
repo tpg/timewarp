@@ -8,11 +8,11 @@
  *
  */
 
-namespace THEPUBLICGOOD\Timewarp\Support;
+namespace TPG\Timewarp\Support;
 
 
-use THEPUBLICGOOD\Timewarp\Exceptions\FailedConformanceTestException;
-use THEPUBLICGOOD\Timewarp\Properties\Property;
+use TPG\Timewarp\Exceptions\FailedConformanceTestException;
+use TPG\Timewarp\Properties\Property;
 
 abstract class CalendarObject
 {

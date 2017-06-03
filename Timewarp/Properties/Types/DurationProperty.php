@@ -8,10 +8,10 @@
  *
  */
 
-namespace THEPUBLICGOOD\Timewarp\Properties\Types;
+namespace TPG\Timewarp\Properties\Types;
 
 
-use THEPUBLICGOOD\Timewarp\Properties\Property;
+use TPG\Timewarp\Properties\Property;
 
 class DurationProperty extends Property
 {

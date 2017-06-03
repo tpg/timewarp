@@ -8,11 +8,11 @@
  *
  */
 
-namespace THEPUBLICGOOD\Timewarp\Properties;
+namespace TPG\Timewarp\Properties;
 
 
-use THEPUBLICGOOD\Timewarp\Exceptions\OutOfBoundsException;
-use THEPUBLICGOOD\Timewarp\Properties\Types\IntegerProperty;
+use TPG\Timewarp\Exceptions\OutOfBoundsException;
+use TPG\Timewarp\Properties\Types\IntegerProperty;
 
 class Priority extends IntegerProperty
 {

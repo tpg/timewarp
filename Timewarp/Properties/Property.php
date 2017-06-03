@@ -8,14 +8,14 @@
  *
  */
 
-namespace THEPUBLICGOOD\Timewarp\Properties;
+namespace TPG\Timewarp\Properties;
 
 
-use THEPUBLICGOOD\Timewarp\Properties\Parameters\Parameter;
+use TPG\Timewarp\Properties\Parameters\Parameter;
 
 /**
  * Class Property
- * @package THEPUBLICGOOD\Timewarp\Properties
+ * @package TPG\Timewarp\Properties
  */
 abstract class Property
 {

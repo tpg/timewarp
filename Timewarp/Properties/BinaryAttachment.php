@@ -8,16 +8,16 @@
  *
  */
 
-namespace THEPUBLICGOOD\Timewarp\Properties;
+namespace TPG\Timewarp\Properties;
 
 
-use THEPUBLICGOOD\Timewarp\Components\Alarm;
-use THEPUBLICGOOD\Timewarp\Components\Event;
-use THEPUBLICGOOD\Timewarp\Components\Journal;
-use THEPUBLICGOOD\Timewarp\Components\Todo;
-use THEPUBLICGOOD\Timewarp\Properties\Parameters\Encoding;
-use THEPUBLICGOOD\Timewarp\Properties\Parameters\FmtType;
-use THEPUBLICGOOD\Timewarp\Properties\Types\BinaryProperty;
+use TPG\Timewarp\Components\Alarm;
+use TPG\Timewarp\Components\Event;
+use TPG\Timewarp\Components\Journal;
+use TPG\Timewarp\Components\Todo;
+use TPG\Timewarp\Properties\Parameters\Encoding;
+use TPG\Timewarp\Properties\Parameters\FmtType;
+use TPG\Timewarp\Properties\Types\BinaryProperty;
 
 class BinaryAttachment extends BinaryProperty
 {

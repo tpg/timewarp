@@ -8,7 +8,7 @@
  *
  */
 
-namespace THEPUBLICGOOD\Timewarp\Properties\Parameters;
+namespace TPG\Timewarp\Properties\Parameters;
 
 
 class TzId extends Parameter

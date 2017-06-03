@@ -12,7 +12,7 @@
 namespace Tests;
 
 use Carbon\Carbon;
-use THEPUBLICGOOD\Timewarp;
+use TPG\Timewarp;
 
 class CalendarTest extends TestCase
 {

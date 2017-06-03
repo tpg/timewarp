@@ -3,12 +3,12 @@
  * Timewarp
  *
  * @author    Warrick Bayman <me@warrickbayman.co.za>
- * @copyright Copyright (c) THEPUBLICGOOD (Pty) Ltd.
+ * @copyright Copyright (c) Thepublicgood (Pty) Ltd.
  * @license   MIT License http://opensource.org/licenses/MIT
  *
  */
 
-namespace THEPUBLICGOOD\Timewarp\Properties\Parameters;
+namespace TPG\Timewarp\Properties\Parameters;
 
 
 class FmtType extends Parameter

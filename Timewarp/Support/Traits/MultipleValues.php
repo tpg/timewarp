@@ -8,15 +8,15 @@
  *
  */
 
-namespace THEPUBLICGOOD\Timewarp\Support\Traits;
+namespace TPG\Timewarp\Support\Traits;
 
 
-use THEPUBLICGOOD\Timewarp\Properties\Property;
+use TPG\Timewarp\Properties\Property;
 
 /**
  * Trait MultipleValues
  *
- * @package THEPUBLICGOOD\Timewarp\Support\Traits
+ * @package TPG\Timewarp\Support\Traits
  */
 trait MultipleValues
 {

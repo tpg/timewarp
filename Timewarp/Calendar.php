@@ -8,18 +8,18 @@
  *
  */
 
-namespace THEPUBLICGOOD\Timewarp;
+namespace TPG\Timewarp;
 
 
-use THEPUBLICGOOD\Timewarp\Components\Component;
-use THEPUBLICGOOD\Timewarp\Properties\Property;
-use THEPUBLICGOOD\Timewarp\Properties\Version;
-use THEPUBLICGOOD\Timewarp\Support\CalendarObject;
-use THEPUBLICGOOD\Timewarp\Support\Traits\IsDelimited;
+use TPG\Timewarp\Components\Component;
+use TPG\Timewarp\Properties\Property;
+use TPG\Timewarp\Properties\Version;
+use TPG\Timewarp\Support\CalendarObject;
+use TPG\Timewarp\Support\Traits\IsDelimited;
 
 /**
  * Class Calendar
- * @package THEPUBLICGOOD\Timewarp
+ * @package TPG\Timewarp
  */
 class Calendar extends CalendarObject
 {

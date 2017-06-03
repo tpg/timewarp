@@ -8,12 +8,12 @@
  *
  */
 
-namespace THEPUBLICGOOD\Timewarp\Properties\Parameters;
+namespace TPG\Timewarp\Properties\Parameters;
 
 
 /**
  * Class Parameter
- * @package THEPUBLICGOOD\Timewarp\Properties\Parameters
+ * @package TPG\Timewarp\Properties\Parameters
  */
 abstract class Parameter
 {

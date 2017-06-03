@@ -8,11 +8,11 @@
  *
  */
 
-namespace THEPUBLICGOOD\Timewarp\Properties;
+namespace TPG\Timewarp\Properties;
 
 
-use THEPUBLICGOOD\Timewarp\Calendar;
-use THEPUBLICGOOD\Timewarp\Properties\Types\TextProperty;
+use TPG\Timewarp\Calendar;
+use TPG\Timewarp\Properties\Types\TextProperty;
 
 class ProdId extends TextProperty
 {

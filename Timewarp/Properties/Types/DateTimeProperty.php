@@ -8,11 +8,11 @@
  *
  */
 
-namespace THEPUBLICGOOD\Timewarp\Properties\Types;
+namespace TPG\Timewarp\Properties\Types;
 
 
 use Carbon\Carbon;
-use THEPUBLICGOOD\Timewarp\Properties\Property;
+use TPG\Timewarp\Properties\Property;
 
 class DateTimeProperty extends Property
 {

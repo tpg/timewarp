@@ -8,7 +8,7 @@
  *
  */
 
-namespace THEPUBLICGOOD\Timewarp\Support\Traits;
+namespace TPG\Timewarp\Support\Traits;
 
 
 trait IsDelimited

@@ -8,14 +8,14 @@
  *
  */
 
-namespace THEPUBLICGOOD\Timewarp\Properties\Types;
+namespace TPG\Timewarp\Properties\Types;
 
 
-use THEPUBLICGOOD\Timewarp\Properties\Property;
+use TPG\Timewarp\Properties\Property;
 
 /**
  * Class TextProperty
- * @package THEPUBLICGOOD\Timewarp\Properties\Types
+ * @package TPG\Timewarp\Properties\Types
  */
 class TextProperty extends Property
 {

@@ -8,10 +8,10 @@
  *
  */
 
-namespace THEPUBLICGOOD\Timewarp\Exceptions;
+namespace TPG\Timewarp\Exceptions;
 
 
-use THEPUBLICGOOD\Timewarp\Properties\Property;
+use TPG\Timewarp\Properties\Property;
 
 class OutOfBoundsException extends \Exception
 {

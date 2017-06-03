@@ -8,11 +8,11 @@
  *
  */
 
-namespace THEPUBLICGOOD\Timewarp\Exceptions;
+namespace TPG\Timewarp\Exceptions;
 
 
-use THEPUBLICGOOD\Timewarp\Properties\Property;
-use THEPUBLICGOOD\Timewarp\Support\CalendarObject;
+use TPG\Timewarp\Properties\Property;
+use TPG\Timewarp\Support\CalendarObject;
 use Throwable;
 
 class FailedConformanceTestException extends \Exception

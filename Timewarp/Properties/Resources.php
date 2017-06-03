@@ -8,13 +8,13 @@
  *
  */
 
-namespace THEPUBLICGOOD\Timewarp\Properties;
+namespace TPG\Timewarp\Properties;
 
 
-use THEPUBLICGOOD\Timewarp\Components\Event;
-use THEPUBLICGOOD\Timewarp\Components\Todo;
-use THEPUBLICGOOD\Timewarp\Properties\Types\TextProperty;
-use THEPUBLICGOOD\Timewarp\Support\Traits\MultipleValues;
+use TPG\Timewarp\Components\Event;
+use TPG\Timewarp\Components\Todo;
+use TPG\Timewarp\Properties\Types\TextProperty;
+use TPG\Timewarp\Support\Traits\MultipleValues;
 
 class Resources extends TextProperty
 {
