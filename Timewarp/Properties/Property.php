@@ -35,6 +35,26 @@ abstract class Property
     protected $parameters = [];
 
     /**
+     * @var array
+     */
+    protected $conformance = [];
+
+    /**
+     * Get conformance array
+     *
+     * @return array
+     */
+    public function conformance(): array
+    {
+        return $this->conformance;
+    }
+
+    public function name(): string
+    {
+        return $this->name;
+    }
+
+    /**
      * Add a parameter
      *
      * @param Parameter $parameter
@@ -69,20 +89,35 @@ abstract class Property
         return implode(';', $this->parameters);
     }
 
+    /**
+     * Get the property content line as a string
+     *
+     * @return string
+     */
     public function contentLine(): string
     {
         $line = $this->name;
         if ($parameters = $this->parameterString()) {
             $line .= ';' . $parameters;
         }
-        return $line . ':' . $this->toString() . "\r\n";
+        return $line . ':' . $this->getValue() . "\r\n";
     }
 
     /**
      * Get property value as string
      * @return string
      */
-    abstract public function toString(): string;
+    abstract public function getValue(): string;
+
+    /**
+     * Get the property as a string
+     *
+     * @return string
+     */
+    public function toString(): string
+    {
+        return $this->contentLine();
+    }
 
     /**
      * Properties can be cast to string
@@ -90,6 +125,6 @@ abstract class Property
      */
     public function __toString(): string
     {
-        return $this->contentLine();
+        return $this->toString();
     }
 }

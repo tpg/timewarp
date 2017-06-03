@@ -11,15 +11,13 @@
 namespace THEPUBLICGOOD\Timewarp\Properties;
 
 
-use THEPUBLICGOOD\Timewarp\Components\Alarm;
 use THEPUBLICGOOD\Timewarp\Components\Event;
-use THEPUBLICGOOD\Timewarp\Components\Journal;
 use THEPUBLICGOOD\Timewarp\Components\Todo;
-use THEPUBLICGOOD\Timewarp\Properties\Types\TextProperty;
+use THEPUBLICGOOD\Timewarp\Properties\Types\GeoProperty;
 
-class Description extends TextProperty
+class Geo extends GeoProperty
 {
-    protected $name = 'DESCRIPTION';
+    protected $name = 'GEO';
 
-    protected $conformance = [Event::class, Todo::class, Journal::class, Alarm::class];
+    protected $conformance = [Event::class, Todo::class];
 }

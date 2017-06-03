@@ -11,15 +11,17 @@
 namespace THEPUBLICGOOD\Timewarp\Properties;
 
 
-use THEPUBLICGOOD\Timewarp\Components\Alarm;
 use THEPUBLICGOOD\Timewarp\Components\Event;
 use THEPUBLICGOOD\Timewarp\Components\Journal;
 use THEPUBLICGOOD\Timewarp\Components\Todo;
 use THEPUBLICGOOD\Timewarp\Properties\Types\TextProperty;
+use THEPUBLICGOOD\Timewarp\Support\Traits\MultipleValues;
 
-class Description extends TextProperty
+class Categories extends TextProperty
 {
-    protected $name = 'DESCRIPTION';
+    use MultipleValues;
 
-    protected $conformance = [Event::class, Todo::class, Journal::class, Alarm::class];
+    protected $name = 'CATEGORIES';
+
+    protected $conformance = [Event::class, Todo::class, Journal::class];
 }

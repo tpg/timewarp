@@ -11,9 +11,14 @@
 namespace THEPUBLICGOOD\Timewarp\Properties;
 
 
+use THEPUBLICGOOD\Timewarp\Components\Event;
+use THEPUBLICGOOD\Timewarp\Components\FreeBusy;
+use THEPUBLICGOOD\Timewarp\Components\Todo;
 use THEPUBLICGOOD\Timewarp\Properties\Types\DateTimeProperty;
 
 class DtStart extends DateTimeProperty
 {
     protected $name = 'DTSTART';
+
+    protected $conformance = [Event::class, Todo::class, FreeBusy::class];
 }

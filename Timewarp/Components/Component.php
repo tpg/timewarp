@@ -12,6 +12,7 @@ namespace THEPUBLICGOOD\Timewarp\Components;
 
 
 use THEPUBLICGOOD\Timewarp\Calendar;
+use THEPUBLICGOOD\Timewarp\Exceptions\FailedConformanceTestException;
 use THEPUBLICGOOD\Timewarp\Properties\Property;
 use THEPUBLICGOOD\Timewarp\Support\CalendarObject;
 use THEPUBLICGOOD\Timewarp\Support\Traits\IsDelimited;
@@ -23,6 +24,11 @@ use THEPUBLICGOOD\Timewarp\Support\Traits\IsDelimited;
 abstract class Component extends CalendarObject
 {
     use IsDelimited;
+
+    /**
+     * @var string
+     */
+    protected $name;
 
     /**
      * @var Property[]
@@ -45,13 +51,22 @@ abstract class Component extends CalendarObject
         }
     }
 
+    protected function conformanceTest(Property $property): bool
+    {
+        return in_array(get_class($this), $property->conformance());
+    }
+
     /**
      * Add a property
      *
      * @param Property $property
+     * @throws FailedConformanceTestException
      */
     public function addProperty(Property $property)
     {
+        if (!$this->conformanceTest($property)) {
+            throw new FailedConformanceTestException($this, $property);
+        }
         $this->properties[] = $property;
     }
 

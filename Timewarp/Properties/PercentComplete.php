@@ -11,12 +11,12 @@
 namespace THEPUBLICGOOD\Timewarp\Properties;
 
 
-use THEPUBLICGOOD\Timewarp\Calendar;
-use THEPUBLICGOOD\Timewarp\Properties\Types\TextProperty;
+use THEPUBLICGOOD\Timewarp\Components\Todo;
+use THEPUBLICGOOD\Timewarp\Properties\Types\IntegerProperty;
 
-class Version extends TextProperty
+class PercentComplete extends IntegerProperty
 {
-    protected $name = 'VERSION';
+    protected $name = 'PERCENT-COMPLETE';
 
-    protected $conformance = [Calendar::class];
+    protected $conformance = [Todo::class];
 }

@@ -50,7 +50,7 @@ class DateTimeProperty extends Property
      * Get property value as string
      * @return string
      */
-    public function toString(): string
+    public function getValue(): string
     {
         return 'P' . $this->dateAsString() . 'T' . $this->timeAsString() . $this->utcSuffix();
     }

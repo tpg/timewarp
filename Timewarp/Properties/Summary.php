@@ -17,9 +17,9 @@ use THEPUBLICGOOD\Timewarp\Components\Journal;
 use THEPUBLICGOOD\Timewarp\Components\Todo;
 use THEPUBLICGOOD\Timewarp\Properties\Types\TextProperty;
 
-class Description extends TextProperty
+class Summary extends TextProperty
 {
-    protected $name = 'DESCRIPTION';
+    protected $name = 'SUMMARY';
 
     protected $conformance = [Event::class, Todo::class, Journal::class, Alarm::class];
 }

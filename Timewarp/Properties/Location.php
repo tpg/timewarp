@@ -11,12 +11,13 @@
 namespace THEPUBLICGOOD\Timewarp\Properties;
 
 
-use THEPUBLICGOOD\Timewarp\Calendar;
+use THEPUBLICGOOD\Timewarp\Components\Event;
+use THEPUBLICGOOD\Timewarp\Components\Todo;
 use THEPUBLICGOOD\Timewarp\Properties\Types\TextProperty;
 
-class Version extends TextProperty
+class Location extends TextProperty
 {
-    protected $name = 'VERSION';
+    protected $name = 'LOCATION';
 
-    protected $conformance = [Calendar::class];
+    protected $conformance = [Event::class, Todo::class];
 }

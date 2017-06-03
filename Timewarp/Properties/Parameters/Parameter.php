@@ -35,12 +35,22 @@ abstract class Parameter
     abstract public function toString(): string;
 
     /**
+     * Get the parameter
+     *
+     * @return string
+     */
+    public function getParameter()
+    {
+        return $this->name . '=' . $this->toString();
+    }
+
+    /**
      * Cast the parameter as a string
      *
      * @return string
      */
     public function __toString(): string
     {
-        return $this->toString();
+        return $this->getParameter();
     }
 }

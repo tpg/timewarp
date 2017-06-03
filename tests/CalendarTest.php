@@ -21,6 +21,13 @@ class CalendarTest extends TestCase
         $event = new Timewarp\Components\Event();
         $event->addProperty(new Timewarp\Properties\DtStart(Carbon::create(2017, 10, 22)));
         $event->addProperty(new Timewarp\Properties\Description('This is a description that is supposed to be at least seventy-five characters long. This line should be broken up onto two lines.'));
+        $event->addProperty((new Timewarp\Properties\Categories(['CAT1', 'CAT2', 'CAT3']))->addValue('CAT4'));
+        $event->addProperty(new Timewarp\Properties\Classification(Timewarp\Properties\Classification::PRIVATE));
+        $event->addProperty(new Timewarp\Properties\Comment('This is a comment that should be broken up into multiple lines. Comments are used to describe the event in more details'));
+        $event->addProperty(new Timewarp\Properties\Geo(24.5,13.7));
+        $event->addProperty(new Timewarp\Properties\Location('Sandton Convention Centre'));
+        $event->addProperty(new Timewarp\Properties\Resources(['desk', 'char']));
+        $event->addProperty(new Timewarp\Properties\Status('CONFIRMED'));
         $calendar = $event->getCalendar();
         $calendar->addProperty(new Timewarp\Properties\ProdId('Product ID'));
         $ics = $calendar->toString();

@@ -55,7 +55,7 @@ class TextProperty extends Property
      * Get property value as string
      * @return string
      */
-    public function toString(): string
+    public function getValue(): string
     {
         return $this->lineBreaks();
     }

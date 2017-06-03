@@ -11,9 +11,12 @@
 namespace THEPUBLICGOOD\Timewarp\Properties;
 
 
+use THEPUBLICGOOD\Timewarp\Calendar;
 use THEPUBLICGOOD\Timewarp\Properties\Types\TextProperty;
 
 class ProdId extends TextProperty
 {
     protected $name = 'PRODID';
+
+    protected $conformance = [Calendar::class];
 }
