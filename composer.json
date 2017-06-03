@@ -1,6 +1,6 @@
 {
     "name": "thepublicgood/timewarp",
-    "description": "Simple ICS object and file library",
+    "description": "PHP Library for working with iCalendar objects",
     "require": {
         "nesbot/carbon": "^1.22"
     },
