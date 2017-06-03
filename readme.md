@@ -13,6 +13,24 @@ Timewarp is simple library for dealing with iCalendar objects. The library attem
 
 ---
 
+## Installation
+
+Timewarp can be installed with Composer:
+
+```
+composer require thepublicgood/timewarp
+```
+
+Or update your `composer.json` file with do a `composer update`:
+
+```json
+{
+    "require": {
+        "thepublicgood/timewarp": "master"
+    }
+}
+```
+
 # Usage
 
 **Note:** Timewarp is pre-v1 and is subject to a lot of changes. I will try to keep this documentation up-to-date, but I can't promise anything until version 1.
