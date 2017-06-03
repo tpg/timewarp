@@ -9,7 +9,7 @@ Timewarp is simple library for dealing with iCalendar objects. The library attem
 **Timewarp requires PHP 7.0.**
 
 > It's still early days. I'm still working through Timewarp and there's a lot of features and requirements missing. The documentation is as I last left it and might not be up-to-date. Until version 1.0, I cannot make any promises about the quality of the documention, or Timewarp itself, for that matter.  
-> However, Timewarp is intended as a core component for tools I am currently working on, so it will be actively developped in the forseeable future.
+> However, Timewarp is intended as a core component for tools I am currently working on, so it will be actively developped in the foreseeable future.
 
 ---
 
