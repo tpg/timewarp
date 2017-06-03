@@ -67,28 +67,6 @@ class Calendar extends CalendarObject
     }
 
     /**
-     * Add a new property
-     *
-     * @param Property $property
-     * @return Calendar
-     */
-    public function addProperty(Property $property): Calendar
-    {
-        $this->properties[] = $property;
-        return $this;
-    }
-
-    /**
-     * Return properties array
-     *
-     * @return Property[]
-     */
-    public function properties()
-    {
-        return $this->properties;
-    }
-
-    /**
      * Add a component to the calendar object
      *
      * @param Component $component

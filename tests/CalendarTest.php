@@ -19,7 +19,8 @@ class CalendarTest extends TestCase
     public function testComplete()
     {
         $event = new Timewarp\Components\Event();
-        $event->addProperty(new Timewarp\Properties\DtStart(Carbon::create(2017, 10, 22)));
+        $event->addProperty(new Timewarp\Properties\DtStart(new \DateTime('2019-01-01 13:30:00')));
+        //$event->addProperty(new Timewarp\Properties\DtStart(Carbon::create(2017, 10, 22)));
         $event->addProperty(new Timewarp\Properties\Description('This is a description that is supposed to be at least seventy-five characters long. This line should be broken up onto two lines.'));
         $event->addProperty((new Timewarp\Properties\Categories(['CAT1', 'CAT2', 'CAT3']))->addValue('CAT4'));
         $event->addProperty(new Timewarp\Properties\Classification(Timewarp\Properties\Classification::PRIVATE));

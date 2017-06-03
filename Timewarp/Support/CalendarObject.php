@@ -11,6 +11,9 @@
 namespace THEPUBLICGOOD\Timewarp\Support;
 
 
+use THEPUBLICGOOD\Timewarp\Exceptions\FailedConformanceTestException;
+use THEPUBLICGOOD\Timewarp\Properties\Property;
+
 abstract class CalendarObject
 {
     /**
@@ -19,11 +22,48 @@ abstract class CalendarObject
     protected $name;
 
     /**
+     * @var Property[]
+     */
+    protected $properties = [];
+
+    /**
      * Get the unwrapped content
      *
      * @return string
      */
     abstract protected function unwrapped(): string;
+
+    protected function conformanceTest(Property $property): bool
+    {
+        return in_array(get_class($this), $property->conformance());
+    }
+
+
+    /**
+     * Add a property
+     *
+     * @param Property $property
+     * @return $this
+     * @throws FailedConformanceTestException
+     */
+    public function addProperty(Property $property)
+    {
+        if (!$this->conformanceTest($property)) {
+            throw new FailedConformanceTestException($this, $property);
+        }
+        $this->properties[] = $property;
+        return $this;
+    }
+
+    /**
+     * Get the array of properties
+     *
+     * @return Property[]
+     */
+    public function properties()
+    {
+        return $this->properties;
+    }
 
     /**
      * Get the name of the calendar object

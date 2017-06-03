@@ -51,35 +51,6 @@ abstract class Component extends CalendarObject
         }
     }
 
-    protected function conformanceTest(Property $property): bool
-    {
-        return in_array(get_class($this), $property->conformance());
-    }
-
-    /**
-     * Add a property
-     *
-     * @param Property $property
-     * @throws FailedConformanceTestException
-     */
-    public function addProperty(Property $property)
-    {
-        if (!$this->conformanceTest($property)) {
-            throw new FailedConformanceTestException($this, $property);
-        }
-        $this->properties[] = $property;
-    }
-
-    /**
-     * Get the array of properties
-     *
-     * @return Property[]
-     */
-    public function properties()
-    {
-        return $this->properties;
-    }
-
     /**
      * Return the component as a string
      *
