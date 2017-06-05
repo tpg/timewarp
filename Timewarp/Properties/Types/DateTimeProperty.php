@@ -11,11 +11,13 @@
 namespace TPG\Timewarp\Properties\Types;
 
 
-use Carbon\Carbon;
 use TPG\Timewarp\Properties\Property;
+use TPG\Timewarp\Support\Traits\DateTimeElements;
 
 class DateTimeProperty extends Property
 {
+    use DateTimeElements;
+
     /**
      * DateTimeProperty constructor.
      * @param \DateTime $value
@@ -25,33 +27,14 @@ class DateTimeProperty extends Property
         $this->value = $value;
     }
 
-    protected function dateAsString(): string
-    {
-        $date = Carbon::createFromTimestamp($this->value->getTimestamp());
-        return $date->format('Ymd');
-    }
-
-    protected function timeAsString(): string
-    {
-        $time = Carbon::createFromTimestamp($this->value->getTimestamp());
-        return $time->format('His');
-    }
-
-    protected function utcSuffix(): string
-    {
-        $suffix = null;
-        if ($this->value->getTimezone()->getName() === 'UTC') {
-            $suffix = 'Z';
-        }
-        return $suffix;
-    }
-
     /**
      * Get property value as string
      * @return string
      */
     public function getValue(): string
     {
-        return 'P' . $this->dateAsString() . 'T' . $this->timeAsString() . $this->utcSuffix();
+        return 'P' . $this->dateAsString($this->value) . 'T' .
+            $this->timeAsString($this->value) .
+            $this->utcSuffix($this->value);
     }
 }

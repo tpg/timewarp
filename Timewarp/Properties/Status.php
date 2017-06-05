@@ -19,19 +19,30 @@ use TPG\Timewarp\Properties\Types\EnumProperty;
 
 class Status extends EnumProperty
 {
+    const
+        CANCELLED = 'CANCELLED',
+        COMPLETED = 'COMPLETED',
+        CONFIRMED = 'CONFIRMED',
+        DRAFT = 'DRAFT',
+        FINAL = 'FINAL',
+        INPROCESS = 'IN-PROCESS',
+        NEEDSACTION = 'NEEDS-ACTION',
+        TENTATIVE = 'TENTATIVE';
+
+
+
     protected $name = 'STATUS';
     protected $conformance = [Event::class, Todo::class, Journal::class];
 
     protected $values = [
-        'TENTATIVE',
-        'CONFIRMED',
         'CANCELLED',
-        'NEEDS-ACTION',
         'COMPLETED',
-        'IN-PROCESS',
-        'CANCELLED',
+        'CONFIRMED',
         'DRAFT',
         'FINAL',
+        'IN-PROCESS',
+        'NEEDS-ACTION',
+        'TENTATIVE',
     ];
 
     protected function permittedValue(string $value): bool

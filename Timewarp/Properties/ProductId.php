@@ -14,7 +14,7 @@ namespace TPG\Timewarp\Properties;
 use TPG\Timewarp\Calendar;
 use TPG\Timewarp\Properties\Types\TextProperty;
 
-class ProdId extends TextProperty
+class ProductId extends TextProperty
 {
     protected $name = 'PRODID';
 

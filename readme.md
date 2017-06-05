@@ -100,7 +100,7 @@ class CalendarController
 Properties can be added to the component through the `addProperty` method. The `appProperty` method returns the current object so it can be chained. The method accepts a single `Property` object which is any object that inherits from the `Property` class. Timewarp provides most of the standard properties in the `Timewarp\Properties` namespace.
 
 ```php
-$dtStart = new Timewarp\Properties\DtStart(new \DateTime('2019-01-01 13:30:00'));
+$dtStart = new Timewarp\Properties\Start(new \DateTime('2019-01-01 13:30:00'));
 $event->addProperty($dtStart)
     ->addProperty(new Timewarp\Properties\Description('New Years! Yeah!');
 ```
@@ -143,21 +143,21 @@ $attachment = new Timewarp\Properties\BinaryAttachment($filePath);
 
 Represents the starting date and time of the component. This property can be added to `Event`, `Todo` and `FreeBusy` components.
 
-The `DtStart` property accepts a standard PHP `DateTime` object:
+The `Start` property accepts a standard PHP `DateTime` object:
 
 ```php
-$start = new Timewarp\Properties\DtStart(new \DateTime('2019-01-01 13:30:00'));
+$start = new Timewarp\Properties\Start(new \DateTime('2019-01-01 13:30:00'));
 
 // Libraries like Carbon extend DateTime, so you can also do:
-$start = new Timewarp\Properties\DtStart(new Carbon::create(2019, 1, 1));
+$start = new Timewarp\Properties\Start(new Carbon::create(2019, 1, 1));
 ```
 
 
 ### End Date
 
-The `DtEnd` property is exactly the same as the `DtStart` property, but represents when a component is supposed to end.
+The `DtEnd` property is exactly the same as the `Start` property, but represents when a component is supposed to end.
 
 ```php
-$end = new Timewarp\Properties\DtEnd(new \DateTime('2019-01-01 19:30:00'));
+$end = new Timewarp\Properties\End(new \DateTime('2019-01-01 19:30:00'));
 ```
 
