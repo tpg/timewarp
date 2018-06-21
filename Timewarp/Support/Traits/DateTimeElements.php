@@ -27,7 +27,7 @@ trait DateTimeElements
         return $time->format('His');
     }
 
-    protected function utcSuffix(\DateTime $dateTime): string
+    protected function utcSuffix(\DateTime $dateTime)
     {
         $suffix = null;
         if ($dateTime->getTimezone()->getName() === 'UTC') {

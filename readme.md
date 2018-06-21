@@ -117,17 +117,23 @@ $calendar->addComponent($event);
 $calendar = $event->getCalendar();
 ```
 
-## Properties
+## A place to start...
 
-Many of the properties you can add to any of the different components, although a few properties are component specific.
+```php
+$calendar = Timewarp\Calendar::event()->from(2018, 3, 1)->forHours(3);
+```
 
-Adding a property to a component that doesn't support it will cause Timewarp to throw a `FailedConformanceTestException`.
+## Component Properties
 
-### Attachment
+Timewarp provides a class to represent each iCalender property. So the `DTSTART` property. so the `DTSTART` property is represented by the `Start` class, and the `DURATION` property is represented by the `Duration` class.
+
+Many of the iCalendar properties can be added to any of the different components, although a few properties are component specific, and Timwarp will thow a `FailedConformanceTestException` if you try to add a property to component that doesn't support it.
+
+### Attachment Property
 
 An attachment is a representation of a document on a component. Attachments can be added to `Event`, `Todo`, `Journal` and `Alarm` components.
 
-Timewarp provides two separate properties to represent attachments. The `UriAttachment` and `BinaryAttachment` properties.
+Unlike the other property classes, Timewarp provides two separate classes to represent attachments. The `UriAttachment` and `BinaryAttachment` properties.
 
 ```php
 // UriAttachment represents a URI to a file resource
@@ -139,6 +145,52 @@ $attachment = new Timewarp\Properties\BinaryAttachment($filePath);
 
 `BinaryAttachment` will automatically determine the mime-type if a file is passed in. you can, however, pass in your own base64 encoded string and include the mime-type as the second parameter.
 
+### Categories Property
+A category is a simple text string which can be used to categorize iCalendar components. The RFC 5545 document states that "categories are useful in searching for calendar components of a particular type".
+
+The Categories property allow for multiple values, so you can pass in an array of values:
+
+```php
+$category = new Timewarp\Properties\Categories(['APPOINTMENTS', 'EDUCATION']);
+```
+
+### Classification Property
+The classification property forms part of the general security within a calendar application. It allows the application to specify the accessability others have to the information in the object.
+
+Timewarp allows one of three values to be set as the classification. `PUBLIC`, `PRIVATE` or `CONFIDENTIAL`. Timewarp provides these values as class constants as well:
+
+```php
+$class = new Timewarp\Properties\Classification(Timewarp\Properties\Classification::PRIVATE);
+
+// or...
+$class = new Timewarp\Properties\Classification('PUBLIC');
+```
+
+### Comment Property
+A simple comment that can be included in the calendar object and provides information to the calendar user.
+
+```php
+$comment = new Timewarp\Properties\Comment('Add a comment to a calendar object');
+```
+
+Calendar object lines should never exceed 75 octets. Comments will automatically be broken up across multiple lines as needed.
+
+### Description Property
+
+### Geographic Property
+
+### Location Property
+
+### Percent Complete Property
+
+### Priority Property
+
+### Resources Property
+
+### Status Property
+
+### Summary Property
+
 ### Start Date
 
 Represents the starting date and time of the component. This property can be added to `Event`, `Todo` and `FreeBusy` components.
@@ -149,13 +201,13 @@ The `Start` property accepts a standard PHP `DateTime` object:
 $start = new Timewarp\Properties\Start(new \DateTime('2019-01-01 13:30:00'));
 
 // Libraries like Carbon extend DateTime, so you can also do:
-$start = new Timewarp\Properties\Start(new Carbon::create(2019, 1, 1));
+$start = new Timewarp\Properties\Start(Carbon::create(2019, 1, 1));
 ```
 
 
 ### End Date
 
-The `DtEnd` property is exactly the same as the `Start` property, but represents when a component is supposed to end.
+The `End` property is exactly the same as the `Start` property, but represents when a component is supposed to end.
 
 ```php
 $end = new Timewarp\Properties\End(new \DateTime('2019-01-01 19:30:00'));

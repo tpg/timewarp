@@ -35,6 +35,6 @@ class CalendarTest extends TestCase
         $calendar->addProperty(new Timewarp\Properties\ProductId('Product ID'));
         $ics = $calendar->toString();
 
-        dd($ics);
+        $calendar->save('calendar.ics');
     }
 }

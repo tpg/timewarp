@@ -12,6 +12,7 @@ namespace TPG\Timewarp;
 
 
 use TPG\Timewarp\Components\Component;
+use TPG\Timewarp\Components\Event;
 use TPG\Timewarp\Properties\Property;
 use TPG\Timewarp\Properties\Version;
 use TPG\Timewarp\Support\CalendarObject;
@@ -87,6 +88,13 @@ class Calendar extends CalendarObject
         return $this->components;
     }
 
+    public static function event(): Event
+    {
+        $calender = new static();
+        $builder = new Builder($calender);
+        $builder->component(new Event());
+    }
+
     /**
      * Get the calendar object as a string
      *
@@ -105,7 +113,7 @@ class Calendar extends CalendarObject
     public function save($filename)
     {
         $ext = pathinfo($filename, PATHINFO_EXTENSION);
-        if (strlen($ext) !== 'ics') {
+        if ($ext !== 'ics') {
             $filename .= '.ics';
         }
         file_put_contents($filename, $this->toString());
