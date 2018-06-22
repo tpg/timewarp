@@ -33,7 +33,7 @@ class DateTimeProperty extends Property
      */
     public function getValue(): string
     {
-        return 'P' . $this->dateAsString($this->value) . 'T' .
+        return $this->dateAsString($this->value) . 'T' .
             $this->timeAsString($this->value) .
             $this->utcSuffix($this->value);
     }
