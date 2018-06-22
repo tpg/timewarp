@@ -14,11 +14,12 @@ namespace TPG\Timewarp\Properties;
 use TPG\Timewarp\Components\Event;
 use TPG\Timewarp\Components\FreeBusy;
 use TPG\Timewarp\Components\Todo;
+use TPG\Timewarp\Components\Journal;
 use TPG\Timewarp\Properties\Types\DateTimeProperty;
 
-class Start extends DateTimeProperty
+class Stamp extends DateTimeProperty
 {
     protected $name = 'DTSTAMP';
 
-    protected $conformance = [Event::class, Todo::class, FreeBusy::class];
+    protected $conformance = [Event::class, Todo::class, Journal::class, FreeBusy::class];
 }
