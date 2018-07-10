@@ -49,6 +49,11 @@ abstract class Property
         return $this->conformance;
     }
 
+    /**
+     * Get the property name
+     *
+     * @return string
+     */
     public function name(): string
     {
         return $this->name;

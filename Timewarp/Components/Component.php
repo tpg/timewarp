@@ -12,8 +12,6 @@ namespace TPG\Timewarp\Components;
 
 
 use TPG\Timewarp\Calendar;
-use TPG\Timewarp\Exceptions\FailedConformanceTestException;
-use TPG\Timewarp\Properties\Property;
 use TPG\Timewarp\Support\CalendarObject;
 use TPG\Timewarp\Support\Traits\IsDelimited;
 
@@ -31,24 +29,20 @@ abstract class Component extends CalendarObject
     protected $name;
 
     /**
-     * @var Property[]
-     */
-    protected $properties;
-
-    /**
      * Get the unwrapped content
      *
      * @return string
+     * @throws \TPG\Timewarp\Exceptions\MissingRequiredPropertyException
      */
     protected function unwrapped(): string
     {
-        {
-            $properties = '';
-            foreach ($this->properties as $property) {
-                $properties .= $property->contentLine();
-            }
-            return $properties;
+        $this->validateRequiredProperties();
+
+        $properties = '';
+        foreach ($this->properties as $property) {
+            $properties .= $property->contentLine();
         }
+        return $properties;
     }
 
     /**
@@ -61,6 +55,11 @@ abstract class Component extends CalendarObject
         return $this->wrap();
     }
 
+    /**
+     * Get the associated Calendar object
+     *
+     * @return Calendar
+     */
     public function getCalendar(): Calendar
     {
         $calendar = new Calendar();

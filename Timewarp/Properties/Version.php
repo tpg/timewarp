@@ -18,5 +18,5 @@ class Version extends TextProperty
 {
     protected $name = 'VERSION';
 
-    protected $conformance = [Calendar::class];
+    protected $conformance = [Calendar::class => 1];
 }

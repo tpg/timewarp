@@ -21,5 +21,5 @@ class Stamp extends DateTimeProperty
 {
     protected $name = 'DTSTAMP';
 
-    protected $conformance = [Event::class, Todo::class, Journal::class, FreeBusy::class];
+    protected $conformance = [Event::class => 1, Todo::class => 1, Journal::class => 1, FreeBusy::class => 1];
 }

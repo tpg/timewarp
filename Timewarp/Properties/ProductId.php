@@ -18,5 +18,5 @@ class ProductId extends TextProperty
 {
     protected $name = 'PRODID';
 
-    protected $conformance = [Calendar::class];
+    protected $conformance = [Calendar::class => 1];
 }

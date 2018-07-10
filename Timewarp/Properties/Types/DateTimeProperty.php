@@ -28,6 +28,16 @@ class DateTimeProperty extends Property
     }
 
     /**
+     * Get the base DateTime object
+     *
+     * @return \DateTime
+     */
+    public function getDateTimeObject(): \DateTime
+    {
+        return $this->value;
+    }
+
+    /**
      * Get property value as string
      * @return string
      */

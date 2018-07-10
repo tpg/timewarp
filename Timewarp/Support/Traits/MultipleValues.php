@@ -20,11 +20,6 @@ use TPG\Timewarp\Properties\Property;
  */
 trait MultipleValues
 {
-    /**
-     * @var array
-     */
-    protected $value = [];
-
     public function __construct(array $value)
     {
         $this->value = $value;

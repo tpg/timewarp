@@ -20,5 +20,5 @@ class Start extends DateTimeProperty
 {
     protected $name = 'DTSTART';
 
-    protected $conformance = [Event::class, Todo::class, FreeBusy::class];
+    protected $conformance = [Event::class => 1, Todo::class => 1, FreeBusy::class => 1];
 }

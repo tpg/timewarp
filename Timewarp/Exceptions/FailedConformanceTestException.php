@@ -24,6 +24,6 @@ class FailedConformanceTestException extends \Exception
 
     protected function formatMessage(CalendarObject $calendarObject, Property $property): string
     {
-        return 'Failed conformance test. Cannot add ' . $property->name() . ' to ' . $calendarObject->name();
+        return 'Failed conformance test. Cannot add "' . get_class($property) . '" to "' . get_class($calendarObject) . '".';
     }
 }

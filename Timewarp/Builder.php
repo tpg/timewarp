@@ -10,42 +10,41 @@
 
 namespace TPG\Timewarp;
 
-
 use TPG\Timewarp\Components\Component;
-use TPG\Timewarp\Properties\Start;
 
-class Builder
+abstract class Builder
 {
     /**
      * @var Calendar
      */
-    private $calendar;
+    protected $calendar;
 
     /**
      * @var Component
      */
-    private $component;
+    protected $component;
 
     /**
-     * Builder constructor.
-     * @param Calendar $calendar
+     * Get the associated component
+     *
+     * @param Component $component
+     * @return $this
      */
-    public function __construct(Calendar $calendar)
-    {
-        $this->calendar = $calendar;
-    }
-
     public function component(Component $component)
     {
         $this->component = $component;
         return $this;
     }
 
-    public function from($year, $month, $day, $hour, $minute = 0, $second = 0)
+    /**
+     * Create and associate the component with a calendar
+     *
+     * @return Calendar
+     */
+    public function createCalendar(): Calendar
     {
-        $start = new \DateTime();
-        $start->setDate($year, $month, $day);
-        $start->setTime($hour, $minute, $second);
-        return $this;
+        $calendar = new Calendar();
+        $calendar->addComponent($this->component);
+        return $calendar;
     }
 }

@@ -11,9 +11,9 @@
 namespace TPG\Timewarp;
 
 
+use TPG\Timewarp\Builders\EventBuilder;
 use TPG\Timewarp\Components\Component;
 use TPG\Timewarp\Components\Event;
-use TPG\Timewarp\Properties\Property;
 use TPG\Timewarp\Properties\Version;
 use TPG\Timewarp\Support\CalendarObject;
 use TPG\Timewarp\Support\Traits\IsDelimited;
@@ -30,11 +30,6 @@ class Calendar extends CalendarObject
      * @var string
      */
     protected $name = 'VCALENDAR';
-
-    /**
-     * @var Property[]
-     */
-    protected $properties = [];
 
     /**
      * @var Component[]
@@ -88,11 +83,11 @@ class Calendar extends CalendarObject
         return $this->components;
     }
 
-    public static function event(): Event
+    public static function event(string $summary): EventBuilder
     {
         $calender = new static();
-        $builder = new Builder($calender);
-        $builder->component(new Event());
+        $builder = new EventBuilder($summary);
+        return $builder;
     }
 
     /**

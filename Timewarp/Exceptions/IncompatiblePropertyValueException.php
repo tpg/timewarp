@@ -22,6 +22,6 @@ class IncompatiblePropertyValueException extends \Exception
 
     protected function formatMessage(string $property, string $expected, string $found)
     {
-        return 'Incompatible property value on ' . $property . '. Expected ' . $expected . ' but found ' . $found;
+        return 'Incompatible property value on "' . $property . '". Expected "' . $expected . '" but found "' . $found . '".';
     }
 }

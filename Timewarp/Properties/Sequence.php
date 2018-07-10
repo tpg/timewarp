@@ -10,16 +10,14 @@
 
 namespace TPG\Timewarp\Properties;
 
-
-use TPG\Timewarp\Components\Alarm;
 use TPG\Timewarp\Components\Event;
 use TPG\Timewarp\Components\Journal;
 use TPG\Timewarp\Components\Todo;
-use TPG\Timewarp\Properties\Types\TextProperty;
+use TPG\Timewarp\Properties\Types\IntegerProperty;
 
-class Summary extends TextProperty
+class Sequence extends IntegerProperty
 {
-    protected $name = 'SUMMARY';
+    protected $name = 'SEQUENCE';
 
-    protected $conformance = [Event::class => 1, Todo::class => 1, Journal::class => 1, Alarm::class => 1];
+    protected $conformance = [Event::class => 1, Todo::class => 1, Journal::class => 1];
 }

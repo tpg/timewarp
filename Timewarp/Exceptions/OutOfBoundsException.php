@@ -27,6 +27,6 @@ class OutOfBoundsException extends \Exception
 
     protected function formatMessage(Property $property, $value)
     {
-        return 'The value of ' . $value . ' is out of bounds for property ' . $property->name();
+        return 'The value of "' . $value . '" is out of bounds for property "' . $property->name() . '".';
     }
 }
