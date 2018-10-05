@@ -1,4 +1,4 @@
-<img src="https://thepublicgood.io/img/logo.svg" width="200">
+<img src="https://thepublicgood.co.za/img/logo.svg" width="200">
 
 # Timewarp
 
