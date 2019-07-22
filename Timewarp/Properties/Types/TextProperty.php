@@ -48,7 +48,7 @@ class TextProperty extends Property
                 $line .= ' ';
             }
         }
-        return implode("\r\n", $lines);
+        return implode("\r\n ", $lines);
     }
 
     /**

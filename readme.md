@@ -1,10 +1,8 @@
-<img src="https://thepublicgood.co.za/img/logo.svg" width="200">
-
 # Timewarp
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/702840eb015e449c98d0c9b3d0ce595a)](https://app.codacy.com/app/makers/timewarp?utm_source=github.com&utm_medium=referral&utm_content=tpg/timewarp&utm_campaign=badger)
-![GitHub License](https://img.shields.io/github/license/open-tpg/timewarp.svg)
-![GitHub Release](https://img.shields.io/github/release/open-tpg/timewarp.svg)
+![GitHub License](https://img.shields.io/github/license/tpg/timewarp.svg)
+![GitHub Release](https://img.shields.io/github/release/tpg/timewarp.svg)
 
 Timewarp is simple library for dealing with iCalendar objects. The library attempts to adhere to RFC [5545](https://tools.ietf.org/html/rfc5545) and [5546](https://tools.ietf.org/html/rfc5546).
 
