@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.1] - 2019-07-22
+### Changed
+- Travis CI and removed an incomplete test.
+
 ## [0.2.0] - 2019-07-22
 ### Changed
 - Fixed a small issue that was not adding spaces to descriptions that span multiple lines 
