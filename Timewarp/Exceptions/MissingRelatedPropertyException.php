@@ -14,16 +14,16 @@ class MissingRelatedPropertyException extends \Exception
 {
     /**
      * MissingRelatedPropertyException constructor.
-     * @param string $propertyString
-     * @param string $relatedPropertyString
+     * @param string $property
+     * @param string $relatedProperty
      */
-    public function __construct(string $propertyString, string $relatedPropertyString)
+    public function __construct(string $property, string $relatedProperty)
     {
-        parent::__construct($this->formatMessage($propertyString, $relatedPropertyString));
+        parent::__construct($this->formatMessage($property, $relatedProperty));
     }
 
-    protected function formatMessage(string $propertyString, string $relatedPropertyString)
+    protected function formatMessage(string $property, string $relatedProperty)
     {
-        return '"Property ' . $propertyString . '" needs an instance of related property "' . $relatedPropertyString . '".';
+        return '"Property ' . $property . '" needs an instance of related property "' . $relatedProperty . '".';
     }
 }

@@ -38,8 +38,10 @@ class TextProperty extends Property
         $lines = [];
         $line = null;
         $lineCount = 0;
+
         foreach ($words as $index => $word) {
             $line .= $word;
+
             if ($index >= count($words) -1 || strlen($line) >= 75) {
                 $lines[$lineCount] = ($lineCount > 0 ? ' ' : null) . $line;
                 $lineCount++;
@@ -48,6 +50,7 @@ class TextProperty extends Property
                 $line .= ' ';
             }
         }
+
         return implode("\r\n ", $lines);
     }
 
