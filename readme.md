@@ -7,10 +7,7 @@
 
 Timewarp is simple library for dealing with iCalendar objects. The library attempts to adhere to RFC [5545](https://tools.ietf.org/html/rfc5545) and [5546](https://tools.ietf.org/html/rfc5546).
 
-**Timewarp requires PHP 7.0.**
-
-> It's still early days. I'm still working through Timewarp and there's a lot of features and requirements missing. The documentation is as I last left it and might not be up-to-date. Until version 1.0, I cannot make any promises about the quality of the documention, or Timewarp itself, for that matter.  
-> However, Timewarp is intended as a core component for tools I am currently working on, so it will be actively developped in the foreseeable future.
+> There's a lot of features and requirements missing and I'll work on documentation as time allows. It might not be as up-to-date as it should be until a version 1.0 is complete, so I cannot make any promises as to the quality of the documentation. However I use Timewarp myself in a number of projects, so it does (and will) receive updates.
 
 ---
 
@@ -33,8 +30,6 @@ Or update your `composer.json` file with do a `composer update`:
 ```
 
 # Usage
-
-**Note:** Timewarp is pre-v1 and is subject to a lot of changes. I will try to keep this documentation up-to-date, but I can't promise anything until version 1.
 
 An iCalendar object is generally composed of a number of properties and calender components. A calendar object MUST contain at least one calendar component, and will often not contain more than one, although entirely possible.
 
