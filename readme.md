@@ -1,5 +1,6 @@
 # Timewarp
 
+[![Build Status](https://travis-ci.org/tpg/timewarp.svg?branch=master)](https://travis-ci.org/tpg/timewarp)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/702840eb015e449c98d0c9b3d0ce595a)](https://app.codacy.com/app/makers/timewarp?utm_source=github.com&utm_medium=referral&utm_content=tpg/timewarp&utm_campaign=badger)
 ![GitHub License](https://img.shields.io/github/license/tpg/timewarp.svg)
 ![GitHub Release](https://img.shields.io/github/release/tpg/timewarp.svg)
