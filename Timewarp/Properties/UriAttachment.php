@@ -34,12 +34,14 @@ class UriAttachment extends TextProperty
      * @param string|null $mime
      * @internal param string $name
      */
-    public function __construct(string $value, string $mime)
+    public function __construct(string $value, $mime)
     {
         $this->mime = $mime;
         parent::__construct($value);
 
-        $this->addParameter(new FmtType($mime));
+        if ($mime) {
+            $this->addParameter(new FmtType($mime));
+        }
     }
 
 
