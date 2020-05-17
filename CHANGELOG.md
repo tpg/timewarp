@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.2] - 2020-05-17
+### Changed
+- Fixed a bug in `UriAttachment` that was not allowing the mime to be `null`.
+
 ## [0.2.1] - 2019-07-22
 ### Changed
 - Travis CI and removed an incomplete test.
